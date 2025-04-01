@@ -1,0 +1,16 @@
+{
+  BasedOnStyle: LLVM,
+  BreakBeforeBraces: Attach,
+  SpaceBeforeParens: Never,
+  IndentWidth: 4,
+  AllowShortBlocksOnASingleLine: false,
+  AllowShortCaseLabelsOnASingleLine: false,
+  AllowShortFunctionsOnASingleLine: false,
+  AllowShortIfStatementsOnASingleLine: false,
+  AllowShortLoopsOnASingleLine: false,
+  ColumnLimit: 0,
+  TabWidth: 4,
+  UseTab: "Never",
+  SpacesBeforeTrailingComments: 1,
+  AlignConsecutiveMacros: true,
+}
