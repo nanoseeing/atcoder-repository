@@ -1,0 +1,18 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["ALL"]
+unfixable = [
+    "F401", # unused import
+    "F841", # unused variable
+]
+
+logger-objects = ["src.library.logger.LOGGER"]
+
+[tool.ruff.lint.pylint]
+max-args = 6

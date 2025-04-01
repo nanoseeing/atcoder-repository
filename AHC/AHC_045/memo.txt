@@ -1,0 +1,6 @@
+cargo run -r --bin tester python3 ../solve.py < in/0000.txt > out/0000.txt
+cargo run -r --bin tester python3 ../sub/mst_test02.py < ../in/0000.txt > ../out/0000.txt
+
+
+snakeviz profile.stats
+python -m cProfile -o profile.stats .py

@@ -1,0 +1,2 @@
+sudo g++ -std=gnu++20 -fdiagnostics-color=always -g -O2 -Wsign-compare -Wparentheses -Wuninitialized -fsanitize=address,undefined -fno-omit-frame-pointer -fno-sanitize-recover stdc++.h
+sudo g++ -std=gnu++20 -fdiagnostics-color=always -g -O2 -Wsign-compare -Wparentheses -Wuninitialized stdc++.h
