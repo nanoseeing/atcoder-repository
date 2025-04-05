@@ -11,7 +11,18 @@
     "vector": "cpp",
     "string_view": "cpp",
     "span": "cpp",
-    "stacktrace": "cpp"
+    "stacktrace": "cpp",
+    "sstream": "cpp",
+    "regex": "cpp",
+    "tuple": "cpp",
+    "forward_list": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "format": "cpp",
+    "initializer_list": "cpp",
+    "ranges": "cpp",
+    "valarray": "cpp",
+    "iomanip": "cpp"
   },
   "cmake.ignoreCMakeListsMissing": true
 }

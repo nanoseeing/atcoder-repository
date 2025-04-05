@@ -1,7 +1,8 @@
 IS_ONLINE_JUDGE = False
 DEBUG = False
-DEBUG_QUERY = 400
-DEBUG_L = 1000
+DEBUG_QUERY = None
+DEBUG_L = None
+DEBUG_CNT = None
 
 if IS_ONLINE_JUDGE:
     DEBUG = False
@@ -155,8 +156,8 @@ class EnvOffline:
         self.output_file_path = output_file_path
 
         if DEBUG:
-            self.L = DEBUG_L
-            self.Q = DEBUG_QUERY
+            self.L = DEBUG_L if DEBUG_L is not None else self.L
+            self.Q = DEBUG_QUERY if DEBUG_QUERY is not None else self.Q
 
     def query(self, c_list: list[int]) -> list[tuple[int, int]]:
         query_str = " ".join(["?", str(len(c_list)), *map(str, c_list)])
@@ -336,6 +337,8 @@ def update_mst(env: EnvOffline, ans_v, ans_edges):
         if target_group is not None:
             group_query_v_cnt[target_group] += env.L
             group_query_cnt[target_group] += 1
+            if DEBUG and DEBUG_CNT is not None and min_cost >= DEBUG_CNT:
+                break
 
     for g in range(env.M):
         now_v = ans_v[g]
@@ -387,7 +390,7 @@ def main():
         avg = sum(costs) / len(costs)
         debug_print(f"avg: {avg}")
         debug_print(f"max: {max(costs)}")
-        with open("../result/mst_test02_rect.txt", "w") as f:
+        with open("../result/mst_test02.txt", "w") as f:
             f.write(f"avg: {avg}\n")
             for pi, cost in enumerate(costs):
                 f.write(f"{pi:0<4} {cost}\n")

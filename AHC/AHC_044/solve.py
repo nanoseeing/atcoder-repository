@@ -1,7 +1,6 @@
-import random
-import time
 import math
 import random
+import time
 
 DEBUG: bool = True
 MAX_TIME: float = 1.8  # sec
@@ -49,7 +48,7 @@ def neighbor_function(x: tuple[list[int], list[int]]) -> tuple[list[int], list[i
             new_bn[i], new_bn[j] = new_bn[j], new_bn[i]
     else:
         weight_t = [t / L for t in T]
-        sample_n = random.choices(range(N), weights=weight_t, k=1)[0]
+        sample_n = random.sample(range(N), weights=weight_t, k=1)[0]
         i = random.randint(0, N - 1)
         if random.random() < 0.5:
             new_an[i] = sample_n

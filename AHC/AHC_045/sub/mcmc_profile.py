@@ -727,7 +727,7 @@ random_vs_list = []
 random_edges_list = []
 for _ in range(400):
     vs = list(range(env.N))
-    random_vs = random.choices(vs, k=15)
+    random_vs = random.sample(vs, k=15)
     mst_edges = env.query(random_vs)
     random_vs_list.append(random_vs)
     random_edges_list.append(mst_edges)
