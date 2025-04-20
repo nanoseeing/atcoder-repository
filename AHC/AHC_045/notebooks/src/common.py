@@ -1,8 +1,9 @@
-import _pickle as cPickle
 import heapq
 import math
 from abc import ABC, abstractmethod
 from collections import deque
+
+import _pickle as cPickle
 
 
 # =================================
@@ -17,7 +18,7 @@ class Env(ABC):
     G: list[int]
     rectangles: list[list[int]]
     cneter_points: list[tuple[int, int]]
-    _query_history: list[str]
+    query_history: list[tuple[int, int]]
 
     @abstractmethod
     def query(self, c_list: list[int]) -> list[tuple[int, int]]:
@@ -54,13 +55,15 @@ class EnvOnline(Env):
     def __init__(self):
         self.read_first_line(input())
         self.read_second_line([input() for _ in range(self.N + 1)])
-
-        self._query_history: list[str] = []
+        self.query_history: list[tuple[int, int]] = []
 
     def query(self, c_list: list[int]):
         query_str = " ".join(["?", str(len(c_list)), *map(str, c_list)])
         print(query_str)
-        return [tuple(map(int, input().split())) for _ in range(len(c_list) - 1)]
+
+        ret = [tuple(map(int, input().split())) for _ in range(len(c_list) - 1)]
+        self.query_history.append(ret)
+        return ret
 
     def answer(
         self,
@@ -96,16 +99,16 @@ class EnvOffline(Env):
 
         self.input_file_path = input_file_path
         self.output_file_path = output_file_path
-        self._query_history: list[str] = []
+        self.query_history: list[tuple[int, int]] = []
 
         if DEBUG:
             self.L = DEBUG_L if DEBUG_L is not None else self.L
             self.Q = DEBUG_QUERY if DEBUG_QUERY is not None else self.Q
 
     def query(self, c_list: list[int]) -> list[tuple[int, int]]:
-        query_str = " ".join(["?", str(len(c_list)), *map(str, c_list)])
-        self._query_history.append(query_str)
+        # query_str = " ".join(["?", str(len(c_list)), *map(str, c_list)])
         ans_edges, _ = kruskals_algorithm(construct_sorted_edges({v: self.coordinates[v] for v in c_list}), c_list)
+        self.query_history.append(ans_edges)
         return ans_edges
 
     def answer(
@@ -122,16 +125,17 @@ class EnvOffline(Env):
                 ans_str += " ".join(map(str, e)) + "\n"
                 dist = calc_dist(self.coordinates[e[0]], self.coordinates[e[1]])
                 cost += dist
-        for query_str in self._query_history:
-            ans_str += query_str + "\n"
 
-        with open(self.output_file_path, "w") as f:
-            f.write(ans_str)
+        # for query_str in self._query_history:
+        #     ans_str += query_str + "\n"
 
-        if len(self._query_history) > self.Q:
-            print(f"!!!query limit exceeded {len(self._query_history)}/{self.Q}")
-        else:
-            print(f"query: {len(self._query_history)}")
+        # with open(self.output_file_path, "w") as f:
+        #     f.write(ans_str)
+
+        # if len(self._query_history) > self.Q:
+        #     print(f"!!!query limit exceeded {len(self._query_history)}/{self.Q}")
+        # else:
+        #     print(f"query: {len(self._query_history)}")
 
         return cost
 
@@ -418,7 +422,7 @@ def cut_graph(
 def construct_dist_matrix_rectangle(rectangles: list[tuple[int, int]]):
     """四角形の最大距離で距離行列を構築する"""
     N = len(rectangles)
-    dist_matrix = [[0.0] * N for _ in range(N)]
+    dist_matrix = [[0] * N for _ in range(N)]
     for i in range(N):
         for j in range(i + 1, N):
             dist = calc_rectangle_max_dist(rectangles[i], rectangles[j])
@@ -430,7 +434,7 @@ def construct_dist_matrix_rectangle(rectangles: list[tuple[int, int]]):
 def construct_dist_matrix(points: list[tuple[int, int]]):
     """点の距離行列を構築する"""
     N = len(points)
-    dist_matrix = [[0.0] * N for _ in range(N)]
+    dist_matrix = [[0] * N for _ in range(N)]
     for i in range(N):
         for j in range(i + 1, N):
             dist = calc_dist(points[i], points[j])
@@ -706,4 +710,14 @@ def calc_point_avg_distances(points1, points2):
         dist = math.dist(p1, p2)
         distances.append(dist)
     avg = sum(distances) / len(distances)
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
+    return avg
     return avg

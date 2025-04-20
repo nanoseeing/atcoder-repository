@@ -1,0 +1,57 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+cluster_count: 125, max_query_size: 7, max_error_width: 1959xmins[0]: 8834, xmaxs[0]: 9387, ymins[0]: 1446, ymaxs[0]: 1999, cluster_sizes[0]: 5
+# isolated clusters: 17
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 13096
+i:  100000 , cost_now:  561 , best_cost:  561 , temp:  81.6721 , good_cnt:  3776 / 100000 
+i:  200000 , cost_now:  193 , best_cost:  193 , temp:  63.4685 , good_cnt:  3852 / 200000 
+i:  300000 , cost_now:  85 , best_cost:  85 , temp:  47.1572 , good_cnt:  3887 / 300000 
+i:  400000 , cost_now:  39 , best_cost:  39 , temp:  38.3399 , good_cnt:  3905 / 400000 
+i:  500000 , cost_now:  26 , best_cost:  26 , temp:  30.3356 , good_cnt:  3921 / 500000 
+i:  600000 , cost_now:  21 , best_cost:  21 , temp:  24.5599 , good_cnt:  3934 / 600000 
+i:  700000 , cost_now:  20 , best_cost:  20 , temp:  20.0706 , good_cnt:  3943 / 700000 
+i:  800000 , cost_now:  15 , best_cost:  15 , temp:  15.3314 , good_cnt:  3958 / 800000 
+i:  900000 , cost_now:  18 , best_cost:  15 , temp:  12.2076 , good_cnt:  3976 / 900000 
+i:  1000000 , cost_now:  12 , best_cost:  12 , temp:  9.78567 , good_cnt:  3996 / 1000000 
+i:  1100000 , cost_now:  12 , best_cost:  12 , temp:  8.08552 , good_cnt:  4009 / 1100000 
+i:  1200000 , cost_now:  12 , best_cost:  12 , temp:  6.43014 , good_cnt:  4034 / 1200000 
+i:  1300000 , cost_now:  17 , best_cost:  12 , temp:  5.10973 , good_cnt:  4075 / 1300000 
+i:  1400000 , cost_now:  18 , best_cost:  12 , temp:  4.11233 , good_cnt:  4118 / 1400000 
+i:  1500000 , cost_now:  19 , best_cost:  12 , temp:  3.33694 , good_cnt:  4188 / 1500000 
+i:  1600000 , cost_now:  17 , best_cost:  12 , temp:  2.73097 , good_cnt:  4266 / 1600000 
+i:  1700000 , cost_now:  27 , best_cost:  12 , temp:  2.25776 , good_cnt:  4354 / 1700000 
+i:  1800000 , cost_now:  19 , best_cost:  12 , temp:  1.77815 , good_cnt:  4470 / 1800000 
+i:  1900000 , cost_now:  22 , best_cost:  12 , temp:  1.4151 , good_cnt:  4653 / 1900000 
+i:  1965635 , best_cost:  12 , good count:  4776 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1831ms
+
+initial_score: 143228
+hill_climbing_score: 143228
+iteration_final_score: 143228
+
+annealing_transition_count: 0
+annealing_update_best_count: 0
+
+try_update_count: 141
+try_update_true_count: 63
+swap_transition_count: 0
+merged_mst_transition_count: 0
+kmeans_transition_count: 0
+swap_one_two_cluster_transition_count: 0
+multi_update_2_count: 0
+multi_update_3_count: 1
+multi_update_4plus_count: 3
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 223461

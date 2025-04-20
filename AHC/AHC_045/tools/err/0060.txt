@@ -1,0 +1,42 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+cluster_count: 165, max_query_size: 12, max_error_width: 2258xmins[0]: 4597, xmaxs[0]: 5288, ymins[0]: 1985, ymaxs[0]: 2676, cluster_sizes[0]: 4
+# isolated clusters: 34
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 55836
+i:  100000 , cost_now:  3310 , best_cost:  3310 , temp:  37.8741 , good_cnt:  5680 / 100000 
+i:  200000 , cost_now:  1106 , best_cost:  1106 , temp:  17.0864 , good_cnt:  5960 / 200000 
+i:  300000 , cost_now:  193 , best_cost:  192 , temp:  6.63521 , good_cnt:  6080 / 300000 
+i:  400000 , cost_now:  61 , best_cost:  61 , temp:  2.67034 , good_cnt:  6159 / 400000 
+i:  476305 , best_cost:  13 , good count:  6260 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1838ms
+
+initial_score: 135907
+hill_climbing_score: 135890
+iteration_final_score: 128845
+
+annealing_transition_count: 343
+annealing_update_best_count: 116
+
+try_update_count: 66491
+try_update_true_count: 2056
+swap_transition_count: 6
+merged_mst_transition_count: 39
+kmeans_transition_count: 94
+swap_one_two_cluster_transition_count: 204
+multi_update_2_count: 0
+multi_update_3_count: 32
+multi_update_4plus_count: 114
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 150686

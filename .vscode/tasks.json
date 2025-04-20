@@ -9,7 +9,6 @@
         "-fdiagnostics-color=always",
         "-g",
         "-O2",
-        "-H",
         "-I/home/nanoseeing/AtCoder/ac-library-master",
         "-Wsign-compare", //符号付き整数と符号無し整数を比較する場合に警告
         "-Wparentheses", //代入式の値を真偽値として使っている場合（e.g. if(x=0)）に警告

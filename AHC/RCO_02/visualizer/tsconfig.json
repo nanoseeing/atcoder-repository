@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "noUnusedLocals": true,
+        "strict": true,
+        "target": "es5",
+        "lib": ["es5", "es6", "dom"],
+    },
+    "files":[ "visualizer.ts" ],
+
+    "filesGlob": [
+        "**/*.ts",
+        "!node_modules/**"
+    ],
+    "compileOnSave": false,
+    "atom": {
+        "rewriteTsconfig": true
+    }
+}

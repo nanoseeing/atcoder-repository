@@ -1,0 +1,18 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.09s
+     Running `target/release/tester ../a.out`
+Iteration: 10000, Current cost: 181061, Best cost: 179881, max_g_num: 9, Temp: 117.617582 
+Iteration: 20000, Current cost: 178946, Best cost: 178027, max_g_num: 8, Temp: 105.046854 
+Iteration: 30000, Current cost: 176989, Best cost: 175859, max_g_num: 7, Temp: 93.719077 
+Iteration: 40000, Current cost: 175564, Best cost: 174869, max_g_num: 7, Temp: 82.740916 
+Iteration: 50000, Current cost: 172823, Best cost: 172715, max_g_num: 6, Temp: 69.864027 
+Iteration: 60000, Current cost: 172153, Best cost: 171922, max_g_num: 5, Temp: 56.958482 
+Iteration: 70000, Current cost: 171502, Best cost: 171357, max_g_num: 4, Temp: 43.006895 
+Iteration: 80000, Current cost: 170993, Best cost: 170826, max_g_num: 3, Temp: 31.548220 
+Iteration: 90000, Current cost: 169431, Best cost: 169431, max_g_num: 3, Temp: 19.195435 
+Iteration: 100000, Current cost: 169059, Best cost: 169059, max_g_num: 2, Temp: 7.578921 
+Iteration: 105387, Best cost: 169059 
+Score = 388026

@@ -1,0 +1,50 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+cluster_count: 131, max_query_size: 9, max_error_width: 1394xmins[0]: 5967, xmaxs[0]: 6646, ymins[0]: 2592, ymaxs[0]: 3271, cluster_sizes[0]: 2
+# isolated clusters: 21
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 26560
+i:  100000 , cost_now:  651 , best_cost:  651 , temp:  69.2778 , good_cnt:  3852 / 100000 
+i:  200000 , cost_now:  222 , best_cost:  222 , temp:  48.5513 , good_cnt:  3955 / 200000 
+i:  300000 , cost_now:  174 , best_cost:  174 , temp:  33.6826 , good_cnt:  3978 / 300000 
+i:  400000 , cost_now:  169 , best_cost:  168 , temp:  23.5323 , good_cnt:  3988 / 400000 
+i:  500000 , cost_now:  171 , best_cost:  167 , temp:  16.2883 , good_cnt:  4005 / 500000 
+i:  600000 , cost_now:  162 , best_cost:  162 , temp:  11.3983 , good_cnt:  4040 / 600000 
+i:  700000 , cost_now:  161 , best_cost:  161 , temp:  7.9398 , good_cnt:  4067 / 700000 
+i:  800000 , cost_now:  159 , best_cost:  156 , temp:  5.49701 , good_cnt:  4112 / 800000 
+i:  900000 , cost_now:  154 , best_cost:  151 , temp:  3.81318 , good_cnt:  4171 / 900000 
+i:  1000000 , cost_now:  159 , best_cost:  151 , temp:  2.66632 , good_cnt:  4263 / 1000000 
+i:  1100000 , cost_now:  158 , best_cost:  151 , temp:  1.85147 , good_cnt:  4386 / 1100000 
+i:  1200000 , cost_now:  159 , best_cost:  150 , temp:  1.28935 , good_cnt:  4578 / 1200000 
+i:  1217256 , best_cost:  146 , good count:  4619 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1828ms
+
+initial_score: 143213
+hill_climbing_score: 143196
+iteration_final_score: 138438
+
+annealing_transition_count: 398
+annealing_update_best_count: 73
+
+try_update_count: 121996
+try_update_true_count: 3592
+swap_transition_count: 10
+merged_mst_transition_count: 60
+kmeans_transition_count: 123
+swap_one_two_cluster_transition_count: 205
+multi_update_2_count: 0
+multi_update_3_count: 87
+multi_update_4plus_count: 188
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 157612

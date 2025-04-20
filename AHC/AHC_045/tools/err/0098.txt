@@ -1,0 +1,54 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+cluster_count: 39, max_query_size: 8, max_error_width: 1162xmins[0]: 9021, xmaxs[0]: 10000, ymins[0]: 6057, ymaxs[0]: 7135, cluster_sizes[0]: 50
+# isolated clusters: 2
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 18962
+i:  100000 , cost_now:  69 , best_cost:  69 , temp:  76.6679 , good_cnt:  3292 / 100000 
+i:  200000 , cost_now:  19 , best_cost:  19 , temp:  59.0549 , good_cnt:  3310 / 200000 
+i:  300000 , cost_now:  8 , best_cost:  8 , temp:  45.6297 , good_cnt:  3329 / 300000 
+i:  400000 , cost_now:  1 , best_cost:  1 , temp:  35.221 , good_cnt:  3340 / 400000 
+i:  500000 , cost_now:  0 , best_cost:  0 , temp:  27.1681 , good_cnt:  3350 / 500000 
+i:  600000 , cost_now:  0 , best_cost:  0 , temp:  20.8835 , good_cnt:  3366 / 600000 
+i:  700000 , cost_now:  0 , best_cost:  0 , temp:  16.0309 , good_cnt:  3378 / 700000 
+i:  800000 , cost_now:  2 , best_cost:  0 , temp:  12.3757 , good_cnt:  3390 / 800000 
+i:  900000 , cost_now:  0 , best_cost:  0 , temp:  9.57854 , good_cnt:  3411 / 900000 
+i:  1000000 , cost_now:  0 , best_cost:  0 , temp:  7.36332 , good_cnt:  3447 / 1000000 
+i:  1100000 , cost_now:  2 , best_cost:  0 , temp:  5.66629 , good_cnt:  3484 / 1100000 
+i:  1200000 , cost_now:  3 , best_cost:  0 , temp:  4.35261 , good_cnt:  3550 / 1200000 
+i:  1300000 , cost_now:  2 , best_cost:  0 , temp:  3.32141 , good_cnt:  3619 / 1300000 
+i:  1400000 , cost_now:  3 , best_cost:  0 , temp:  2.55622 , good_cnt:  3735 / 1400000 
+i:  1500000 , cost_now:  7 , best_cost:  0 , temp:  1.95448 , good_cnt:  3865 / 1500000 
+i:  1600000 , cost_now:  3 , best_cost:  0 , temp:  1.48363 , good_cnt:  4041 / 1600000 
+i:  1677222 , best_cost:  0 , good count:  4211 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1822ms
+
+initial_score: 179718
+hill_climbing_score: 179718
+iteration_final_score: 174119
+
+annealing_transition_count: 73
+annealing_update_best_count: 30
+
+try_update_count: 25451
+try_update_true_count: 1440
+swap_transition_count: 0
+merged_mst_transition_count: 15
+kmeans_transition_count: 44
+swap_one_two_cluster_transition_count: 14
+multi_update_2_count: 0
+multi_update_3_count: 23
+multi_update_4plus_count: 16
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 193273

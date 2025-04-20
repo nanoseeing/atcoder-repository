@@ -1,0 +1,45 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `target/release/tester ../a.out`
+cluster_count: 22, max_query_size: 12, max_error_width: 889xmins[0]: 5109, xmaxs[0]: 5789, ymins[0]: 4117, ymaxs[0]: 4797, cluster_sizes[0]: 28
+# isolated clusters: 1
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 51773
+i:  100000 , cost_now:  71 , best_cost:  71 , temp:  44.6309 , good_cnt:  3189 / 100000 
+i:  200000 , cost_now:  3 , best_cost:  3 , temp:  18.879 , good_cnt:  3214 / 200000 
+i:  300000 , cost_now:  1 , best_cost:  0 , temp:  8.22179 , good_cnt:  3253 / 300000 
+i:  400000 , cost_now:  1 , best_cost:  0 , temp:  3.83487 , good_cnt:  3314 / 400000 
+i:  500000 , cost_now:  10 , best_cost:  0 , temp:  1.83223 , good_cnt:  3445 / 500000 
+i:  538365 , best_cost:  0 , good count:  3535 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1836ms
+
+initial_score: 182348
+hill_climbing_score: 182348
+iteration_final_score: 179580
+
+annealing_transition_count: 15
+annealing_update_best_count: 9
+
+try_update_count: 8036
+try_update_true_count: 292
+swap_transition_count: 0
+merged_mst_transition_count: 1
+kmeans_transition_count: 13
+swap_one_two_cluster_transition_count: 1
+multi_update_2_count: 0
+multi_update_3_count: 4
+multi_update_4plus_count: 0
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 185777

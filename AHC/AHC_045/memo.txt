@@ -1,6 +1,6 @@
 cargo run -r --bin tester python3 ../solve.py < in/0000.txt > out/0000.txt
 cargo run -r --bin tester python3 ../sub/mcmc_test10.py < ../in/0000.txt > ../out/0000.txt
-cargo run -r --bin tester ../cpp/a.out < ../in/0000.txt > ../out/0000.txt
+cargo run -r --bin tester ../cpp/a.out < ../in/0000.txt > ../out/0062.txt
 
 
 snakeviz profile.stats

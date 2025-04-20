@@ -1,0 +1,48 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+cluster_count: 2, max_query_size: 9, max_error_width: 2375xmins[0]: 8507, xmaxs[0]: 8581, ymins[0]: 2220, ymaxs[0]: 2294, cluster_sizes[0]: 445
+# isolated clusters: 0
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 25485
+i:  100000 , cost_now:  2749 , best_cost:  2749 , temp:  70.1706 , good_cnt:  5429 / 100000 
+i:  200000 , cost_now:  1464 , best_cost:  1464 , temp:  49.3436 , good_cnt:  5624 / 200000 
+i:  300000 , cost_now:  1011 , best_cost:  1011 , temp:  35.1872 , good_cnt:  5700 / 300000 
+i:  400000 , cost_now:  563 , best_cost:  563 , temp:  24.7189 , good_cnt:  5751 / 400000 
+i:  500000 , cost_now:  393 , best_cost:  393 , temp:  16.5478 , good_cnt:  5807 / 500000 
+i:  600000 , cost_now:  360 , best_cost:  360 , temp:  10.9912 , good_cnt:  5851 / 600000 
+i:  700000 , cost_now:  308 , best_cost:  308 , temp:  7.39226 , good_cnt:  5904 / 700000 
+i:  800000 , cost_now:  291 , best_cost:  289 , temp:  4.76621 , good_cnt:  5938 / 800000 
+i:  900000 , cost_now:  205 , best_cost:  205 , temp:  3.14494 , good_cnt:  6000 / 900000 
+i:  1000000 , cost_now:  201 , best_cost:  196 , temp:  2.17216 , good_cnt:  6099 / 1000000 
+i:  1100000 , cost_now:  143 , best_cost:  140 , temp:  1.45041 , good_cnt:  6233 / 1100000 
+i:  1129953 , best_cost:  131 , good count:  6273 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1830ms
+
+initial_score: 184951
+hill_climbing_score: 184951
+iteration_final_score: 184951
+
+annealing_transition_count: 0
+annealing_update_best_count: 0
+
+try_update_count: 995
+try_update_true_count: 19
+swap_transition_count: 0
+merged_mst_transition_count: 0
+kmeans_transition_count: 0
+swap_one_two_cluster_transition_count: 0
+multi_update_2_count: 0
+multi_update_3_count: 0
+multi_update_4plus_count: 0
+
+Clustering iteration phase completed.
+# time: 1902ms
+
+Finalize phase completed.
+# time: 1902ms
+
+Writing solution...
+Score = 242629

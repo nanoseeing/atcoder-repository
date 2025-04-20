@@ -1,0 +1,52 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 0.11s
+     Running `target/release/tester ../a.out`
+cluster_count: 1, max_query_size: 9, max_error_width: 1531xmins[0]: 8306, xmaxs[0]: 9309, ymins[0]: 5464, ymaxs[0]: 6467, cluster_sizes[0]: 800
+# isolated clusters: 0
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 26681
+i:  100000 , cost_now:  402 , best_cost:  398 , temp:  61.8063 , good_cnt:  3977 / 100000 
+i:  200000 , cost_now:  210 , best_cost:  210 , temp:  42.4625 , good_cnt:  4022 / 200000 
+i:  300000 , cost_now:  96 , best_cost:  96 , temp:  26.2632 , good_cnt:  4048 / 300000 
+i:  400000 , cost_now:  79 , best_cost:  79 , temp:  17.3315 , good_cnt:  4064 / 400000 
+i:  500000 , cost_now:  0 , best_cost:  0 , temp:  11.854 , good_cnt:  4099 / 500000 
+i:  600000 , cost_now:  1 , best_cost:  0 , temp:  7.9133 , good_cnt:  4123 / 600000 
+i:  700000 , cost_now:  0 , best_cost:  0 , temp:  5.04651 , good_cnt:  4161 / 700000 
+i:  800000 , cost_now:  3 , best_cost:  0 , temp:  3.49841 , good_cnt:  4222 / 800000 
+i:  900000 , cost_now:  4 , best_cost:  0 , temp:  2.45857 , good_cnt:  4311 / 900000 
+i:  1000000 , cost_now:  9 , best_cost:  0 , temp:  1.69383 , good_cnt:  4442 / 1000000 
+i:  1074345 , best_cost:  0 , good count:  4586 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1920ms
+
+initial_score: 184763
+hill_climbing_score: 184763
+iteration_final_score: 184763
+
+annealing_transition_count: 0
+annealing_update_best_count: 0
+
+try_update_count: 0
+try_update_true_count: 0
+swap_transition_count: 0
+merged_mst_transition_count: 0
+kmeans_transition_count: 0
+swap_one_two_cluster_transition_count: 0
+multi_update_2_count: 0
+multi_update_3_count: 0
+multi_update_4plus_count: 0
+
+Clustering iteration phase completed.
+# time: 1958ms
+
+Finalize phase completed.
+# time: 1958ms
+
+Writing solution...
+Score = 214468

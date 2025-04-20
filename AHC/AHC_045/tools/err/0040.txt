@@ -1,0 +1,40 @@
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `target/release/tester ../a.out`
+cluster_count: 140, max_query_size: 15, max_error_width: 1534xmins[0]: 5089, xmaxs[0]: 6100, ymins[0]: 4432, ymaxs[0]: 5443, cluster_sizes[0]: 3
+# isolated clusters: 24
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 93013
+i:  100000 , cost_now:  332 , best_cost:  332 , temp:  23.756 , good_cnt:  4571 / 100000 
+i:  200000 , cost_now:  38 , best_cost:  37 , temp:  5.88381 , good_cnt:  4669 / 200000 
+i:  288166 , best_cost:  5 , good count:  4761 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1848ms
+
+initial_score: 138692
+hill_climbing_score: 138541
+iteration_final_score: 132952
+
+annealing_transition_count: 207
+annealing_update_best_count: 85
+
+try_update_count: 45327
+try_update_true_count: 1418
+swap_transition_count: 7
+merged_mst_transition_count: 24
+kmeans_transition_count: 60
+swap_one_two_cluster_transition_count: 116
+multi_update_2_count: 0
+multi_update_3_count: 30
+multi_update_4plus_count: 73
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 146438

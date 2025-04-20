@@ -1,0 +1,13 @@
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `target/release/tester ../a.out`
+Iteration: 10000, Current cost: 182032, Best cost: 181584, max_g_num: 9, Temp: 114.132134 
+Iteration: 20000, Current cost: 178551, Best cost: 178142, max_g_num: 8, Temp: 99.741703 
+Iteration: 30000, Current cost: 175254, Best cost: 174893, max_g_num: 7, Temp: 85.987462 
+Iteration: 40000, Current cost: 173776, Best cost: 173776, max_g_num: 6, Temp: 72.750581 
+Iteration: 50000, Current cost: 173173, Best cost: 172965, max_g_num: 5, Temp: 57.616145 
+Iteration: 60000, Current cost: 172946, Best cost: 172836, max_g_num: 4, Temp: 43.923604 
+Iteration: 70000, Current cost: 172430, Best cost: 172430, max_g_num: 3, Temp: 30.730714 
+Iteration: 80000, Current cost: 172283, Best cost: 172283, max_g_num: 3, Temp: 17.346299 
+Iteration: 90000, Current cost: 171887, Best cost: 171887, max_g_num: 2, Temp: 3.827322 
+Iteration: 91969, Best cost: 171887 
+Score = 390749

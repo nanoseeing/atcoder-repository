@@ -1,0 +1,27 @@
+    Finished `release` profile [optimized] target(s) in 0.02s
+     Running `target/release/tester ../a.out`
+Iteration: 10000, Current cost: 154711, Best cost: 151328, max_g_num: 9, Temp: 123.541740 
+Iteration: 20000, Current cost: 150592, Best cost: 150592, max_g_num: 9, Temp: 117.626288 
+Iteration: 30000, Current cost: 147826, Best cost: 147784, max_g_num: 8, Temp: 110.559034 
+Iteration: 40000, Current cost: 148171, Best cost: 147432, max_g_num: 8, Temp: 105.840651 
+Iteration: 50000, Current cost: 145559, Best cost: 144606, max_g_num: 8, Temp: 100.290070 
+Iteration: 60000, Current cost: 143563, Best cost: 142805, max_g_num: 7, Temp: 95.137259 
+Iteration: 70000, Current cost: 143463, Best cost: 142342, max_g_num: 7, Temp: 89.430154 
+Iteration: 80000, Current cost: 144406, Best cost: 142165, max_g_num: 7, Temp: 84.112185 
+Iteration: 90000, Current cost: 143131, Best cost: 142165, max_g_num: 6, Temp: 78.271187 
+Iteration: 100000, Current cost: 140833, Best cost: 140335, max_g_num: 6, Temp: 72.679697 
+Iteration: 110000, Current cost: 141502, Best cost: 140335, max_g_num: 6, Temp: 67.957881 
+Iteration: 120000, Current cost: 140912, Best cost: 140182, max_g_num: 5, Temp: 62.331856 
+Iteration: 130000, Current cost: 139772, Best cost: 138905, max_g_num: 5, Temp: 57.537570 
+Iteration: 140000, Current cost: 138194, Best cost: 138194, max_g_num: 5, Temp: 52.263099 
+Iteration: 150000, Current cost: 138315, Best cost: 137830, max_g_num: 4, Temp: 46.938314 
+Iteration: 160000, Current cost: 137940, Best cost: 137805, max_g_num: 4, Temp: 41.168047 
+Iteration: 170000, Current cost: 137717, Best cost: 137641, max_g_num: 4, Temp: 35.787789 
+Iteration: 180000, Current cost: 137886, Best cost: 137641, max_g_num: 3, Temp: 30.526545 
+Iteration: 190000, Current cost: 137288, Best cost: 137174, max_g_num: 3, Temp: 25.274445 
+Iteration: 200000, Current cost: 136983, Best cost: 136859, max_g_num: 3, Temp: 20.433039 
+Iteration: 210000, Current cost: 136810, Best cost: 136810, max_g_num: 2, Temp: 15.596352 
+Iteration: 220000, Current cost: 136783, Best cost: 136767, max_g_num: 2, Temp: 10.773957 
+Iteration: 230000, Current cost: 136770, Best cost: 136767, max_g_num: 2, Temp: 5.581917 
+Iteration: 237808, Best cost: 136599 
+Score = 286908

@@ -1,0 +1,53 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 0.11s
+     Running `target/release/tester ../a.out`
+cluster_count: 166, max_query_size: 9, max_error_width: 2497xmins[0]: 2255, xmaxs[0]: 3258, ymins[0]: 8699, ymaxs[0]: 9702, cluster_sizes[0]: 9
+# isolated clusters: 34
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 26583
+i:  100000 , cost_now:  3192 , best_cost:  3192 , temp:  64.1278 , good_cnt:  5100 / 100000 
+i:  200000 , cost_now:  968 , best_cost:  968 , temp:  40.8173 , good_cnt:  5397 / 200000 
+i:  300000 , cost_now:  647 , best_cost:  647 , temp:  25.001 , good_cnt:  5488 / 300000 
+i:  400000 , cost_now:  586 , best_cost:  586 , temp:  15.9763 , good_cnt:  5511 / 400000 
+i:  500000 , cost_now:  509 , best_cost:  508 , temp:  10.985 , good_cnt:  5559 / 500000 
+i:  600000 , cost_now:  493 , best_cost:  493 , temp:  7.55286 , good_cnt:  5599 / 600000 
+i:  700000 , cost_now:  489 , best_cost:  486 , temp:  5.20798 , good_cnt:  5633 / 700000 
+i:  800000 , cost_now:  487 , best_cost:  481 , temp:  3.41778 , good_cnt:  5700 / 800000 
+i:  900000 , cost_now:  456 , best_cost:  456 , temp:  2.23015 , good_cnt:  5787 / 900000 
+i:  1000000 , cost_now:  450 , best_cost:  449 , temp:  1.40628 , good_cnt:  5910 / 1000000 
+i:  1019542 , best_cost:  445 , good count:  5945 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1847ms
+
+initial_score: 131628
+hill_climbing_score: 131592
+iteration_final_score: 125467
+
+annealing_transition_count: 252
+annealing_update_best_count: 96
+
+try_update_count: 38223
+try_update_true_count: 1570
+swap_transition_count: 4
+merged_mst_transition_count: 28
+kmeans_transition_count: 87
+swap_one_two_cluster_transition_count: 133
+multi_update_2_count: 0
+multi_update_3_count: 28
+multi_update_4plus_count: 82
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 182010

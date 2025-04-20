@@ -1,0 +1,43 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.04s
+     Running `target/release/tester ../a.out`
+cluster_count: 25, max_query_size: 15, max_error_width: 1711xmins[0]: 2913, xmaxs[0]: 4108, ymins[0]: 1827, ymaxs[0]: 3022, cluster_sizes[0]: 25
+# isolated clusters: 0
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 95145
+i:  100000 , cost_now:  1142 , best_cost:  1142 , temp:  23.8267 , good_cnt:  5107 / 100000 
+i:  200000 , cost_now:  198 , best_cost:  198 , temp:  6.21199 , good_cnt:  5323 / 200000 
+i:  298920 , best_cost:  47 , good count:  5464 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1843ms
+
+initial_score: 179510
+hill_climbing_score: 178680
+iteration_final_score: 178441
+
+annealing_transition_count: 8
+annealing_update_best_count: 6
+
+try_update_count: 8267
+try_update_true_count: 403
+swap_transition_count: 2
+merged_mst_transition_count: 3
+kmeans_transition_count: 3
+swap_one_two_cluster_transition_count: 0
+multi_update_2_count: 0
+multi_update_3_count: 5
+multi_update_4plus_count: 1
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 189386

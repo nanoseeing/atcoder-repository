@@ -1,0 +1,26 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on build directory
+    Finished `release` profile [optimized] target(s) in 0.11s
+     Running `target/release/tester ../a.out`
+Iteration: 10000, Current cost: 165047, Best cost: 164591, max_g_num: 9, Temp: 123.011784 
+Iteration: 20000, Current cost: 165162, Best cost: 162546, max_g_num: 9, Temp: 116.834187 
+Iteration: 30000, Current cost: 162632, Best cost: 161803, max_g_num: 8, Temp: 110.493628 
+Iteration: 40000, Current cost: 162167, Best cost: 161803, max_g_num: 8, Temp: 101.563002 
+Iteration: 50000, Current cost: 160347, Best cost: 159817, max_g_num: 7, Temp: 91.716753 
+Iteration: 60000, Current cost: 159285, Best cost: 158788, max_g_num: 7, Temp: 83.494635 
+Iteration: 70000, Current cost: 157898, Best cost: 156468, max_g_num: 6, Temp: 76.067495 
+Iteration: 80000, Current cost: 157621, Best cost: 156468, max_g_num: 6, Temp: 68.980179 
+Iteration: 90000, Current cost: 155751, Best cost: 155751, max_g_num: 5, Temp: 62.645352 
+Iteration: 100000, Current cost: 155904, Best cost: 155593, max_g_num: 5, Temp: 55.496083 
+Iteration: 110000, Current cost: 155577, Best cost: 155474, max_g_num: 4, Temp: 46.656539 
+Iteration: 120000, Current cost: 155019, Best cost: 155019, max_g_num: 4, Temp: 39.971811 
+Iteration: 130000, Current cost: 154538, Best cost: 154534, max_g_num: 3, Temp: 33.218284 
+Iteration: 140000, Current cost: 154496, Best cost: 154478, max_g_num: 3, Temp: 25.097601 
+Iteration: 150000, Current cost: 154340, Best cost: 154319, max_g_num: 2, Temp: 16.083893 
+Iteration: 160000, Current cost: 153975, Best cost: 153975, max_g_num: 2, Temp: 9.316514 
+Iteration: 170000, Current cost: 153991, Best cost: 153970, max_g_num: 2, Temp: 2.546401 
+Iteration: 172100, Best cost: 153970 
+Score = 273465

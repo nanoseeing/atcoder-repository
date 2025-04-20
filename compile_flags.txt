@@ -1,0 +1,9 @@
+-Wall
+-Wextra
+-Wno-unknown-pragmas
+-Wno-unused
+-Wno-unused-parameter
+-Wno-sign-compare
+-std=gnu++20
+-I
+atcoder-library/

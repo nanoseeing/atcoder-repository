@@ -1,0 +1,55 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.07s
+     Running `target/release/tester ../a.out`
+cluster_count: 12, max_query_size: 8, max_error_width: 631xmins[0]: 9546, xmaxs[0]: 9552, ymins[0]: 5851, ymaxs[0]: 5857, cluster_sizes[0]: 129
+# isolated clusters: 0
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 17840
+i:  100000 , cost_now:  121 , best_cost:  121 , temp:  75.1461 , good_cnt:  1874 / 100000 
+i:  200000 , cost_now:  89 , best_cost:  89 , temp:  59.0179 , good_cnt:  1892 / 200000 
+i:  300000 , cost_now:  82 , best_cost:  82 , temp:  44.9947 , good_cnt:  1898 / 300000 
+i:  400000 , cost_now:  72 , best_cost:  72 , temp:  35.1487 , good_cnt:  1913 / 400000 
+i:  500000 , cost_now:  71 , best_cost:  70 , temp:  26.5546 , good_cnt:  1927 / 500000 
+i:  600000 , cost_now:  70 , best_cost:  70 , temp:  19.9936 , good_cnt:  1941 / 600000 
+i:  700000 , cost_now:  70 , best_cost:  70 , temp:  15.0569 , good_cnt:  1970 / 700000 
+i:  800000 , cost_now:  68 , best_cost:  68 , temp:  10.9706 , good_cnt:  2002 / 800000 
+i:  900000 , cost_now:  68 , best_cost:  68 , temp:  7.39813 , good_cnt:  2049 / 900000 
+i:  1000000 , cost_now:  70 , best_cost:  67 , temp:  5.22529 , good_cnt:  2132 / 1000000 
+i:  1100000 , cost_now:  67 , best_cost:  66 , temp:  4.1123 , good_cnt:  2219 / 1100000 
+i:  1200000 , cost_now:  61 , best_cost:  58 , temp:  3.17835 , good_cnt:  2347 / 1200000 
+i:  1300000 , cost_now:  65 , best_cost:  58 , temp:  2.43765 , good_cnt:  2500 / 1300000 
+i:  1400000 , cost_now:  63 , best_cost:  58 , temp:  1.81996 , good_cnt:  2705 / 1400000 
+i:  1500000 , cost_now:  71 , best_cost:  56 , temp:  1.34959 , good_cnt:  2983 / 1500000 
+i:  1535706 , best_cost:  56 , good count:  3111 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1823ms
+
+initial_score: 183178
+hill_climbing_score: 183178
+iteration_final_score: 182143
+
+annealing_transition_count: 12
+annealing_update_best_count: 5
+
+try_update_count: 5312
+try_update_true_count: 209
+swap_transition_count: 0
+merged_mst_transition_count: 3
+kmeans_transition_count: 9
+swap_one_two_cluster_transition_count: 0
+multi_update_2_count: 0
+multi_update_3_count: 1
+multi_update_4plus_count: 1
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 190882

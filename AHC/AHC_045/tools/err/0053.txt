@@ -1,0 +1,66 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Finished `release` profile [optimized] target(s) in 0.03s
+     Running `target/release/tester ../a.out`
+cluster_count: 83, max_query_size: 6, max_error_width: 1878xmins[0]: 6704, xmaxs[0]: 7045, ymins[0]: 4442, ymaxs[0]: 4783, cluster_sizes[0]: 12
+# isolated clusters: 8
+isolated vertices reservation disabled
+Running coordinate estimation...
+Query target size: 400
+Constrains size: 8172
+i:  100000 , cost_now:  1225 , best_cost:  1225 , temp:  84.3128 , good_cnt:  2935 / 100000 
+i:  200000 , cost_now:  631 , best_cost:  631 , temp:  69.9709 , good_cnt:  3072 / 200000 
+i:  300000 , cost_now:  608 , best_cost:  608 , temp:  59.6337 , good_cnt:  3096 / 300000 
+i:  400000 , cost_now:  528 , best_cost:  528 , temp:  52.1907 , good_cnt:  3100 / 400000 
+i:  500000 , cost_now:  512 , best_cost:  512 , temp:  44.585 , good_cnt:  3118 / 500000 
+i:  600000 , cost_now:  478 , best_cost:  477 , temp:  37.6876 , good_cnt:  3136 / 600000 
+i:  700000 , cost_now:  471 , best_cost:  470 , temp:  32.9645 , good_cnt:  3148 / 700000 
+i:  800000 , cost_now:  457 , best_cost:  457 , temp:  28.6117 , good_cnt:  3164 / 800000 
+i:  900000 , cost_now:  450 , best_cost:  450 , temp:  24.952 , good_cnt:  3182 / 900000 
+i:  1000000 , cost_now:  450 , best_cost:  446 , temp:  20.8456 , good_cnt:  3197 / 1000000 
+i:  1100000 , cost_now:  432 , best_cost:  431 , temp:  16.9956 , good_cnt:  3223 / 1100000 
+i:  1200000 , cost_now:  425 , best_cost:  425 , temp:  14.4181 , good_cnt:  3245 / 1200000 
+i:  1300000 , cost_now:  422 , best_cost:  422 , temp:  11.5817 , good_cnt:  3262 / 1300000 
+i:  1400000 , cost_now:  426 , best_cost:  422 , temp:  9.25026 , good_cnt:  3287 / 1400000 
+i:  1500000 , cost_now:  422 , best_cost:  422 , temp:  7.7084 , good_cnt:  3320 / 1500000 
+i:  1600000 , cost_now:  428 , best_cost:  421 , temp:  6.385 , good_cnt:  3358 / 1600000 
+i:  1700000 , cost_now:  424 , best_cost:  421 , temp:  5.40375 , good_cnt:  3411 / 1700000 
+i:  1800000 , cost_now:  420 , best_cost:  420 , temp:  4.42947 , good_cnt:  3466 / 1800000 
+i:  1900000 , cost_now:  433 , best_cost:  419 , temp:  3.68294 , good_cnt:  3528 / 1900000 
+i:  2000000 , cost_now:  415 , best_cost:  414 , temp:  3.22654 , good_cnt:  3606 / 2000000 
+i:  2100000 , cost_now:  421 , best_cost:  408 , temp:  2.65413 , good_cnt:  3708 / 2100000 
+i:  2200000 , cost_now:  411 , best_cost:  408 , temp:  2.23561 , good_cnt:  3800 / 2200000 
+i:  2300000 , cost_now:  412 , best_cost:  408 , temp:  1.92305 , good_cnt:  3915 / 2300000 
+i:  2400000 , cost_now:  410 , best_cost:  401 , temp:  1.66976 , good_cnt:  4063 / 2400000 
+i:  2500000 , cost_now:  419 , best_cost:  401 , temp:  1.40054 , good_cnt:  4236 / 2500000 
+i:  2589418 , best_cost:  401 , good count:  4422 
+Coordinate estimation completed.
+Initial clustering phase completed.
+# time: 1827ms
+
+initial_score: 156421
+hill_climbing_score: 156210
+iteration_final_score: 153199
+
+annealing_transition_count: 173
+annealing_update_best_count: 46
+
+try_update_count: 40703
+try_update_true_count: 1476
+swap_transition_count: 1
+merged_mst_transition_count: 44
+kmeans_transition_count: 77
+swap_one_two_cluster_transition_count: 51
+multi_update_2_count: 0
+multi_update_3_count: 40
+multi_update_4plus_count: 57
+
+Clustering iteration phase completed.
+# time: 1901ms
+
+Finalize phase completed.
+# time: 1901ms
+
+Writing solution...
+Score = 247616
