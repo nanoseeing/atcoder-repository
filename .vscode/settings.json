@@ -94,7 +94,8 @@
     "thread": "cpp",
     "typeindex": "cpp",
     "typeinfo": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "dsu": "cpp"
   },
   "cmake.ignoreCMakeListsMissing": true
 }

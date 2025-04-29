@@ -38,56 +38,51 @@ class TimeKeeper {
     }
 };
 
-class Xorshift32 {
-  private:
-    uint32_t state;
-
-    // ランダムなuint32_t整数を返す
-    uint32_t next() {
-        uint32_t x = state;
-        x ^= x << 13;
-        x ^= x >> 17;
-        x ^= x << 5;
-        state = x;
-        return x;
-    }
-
+template <typename Derived, typename UIntType>
+class XorshiftBase {
   public:
-    explicit Xorshift32(uint32_t seed = 2525)
-        : state(seed) {
+    using UInt = UIntType;
+
+    UInt next() {
+        return static_cast<Derived *>(this)->next();
     }
 
-    // [0, max) の範囲でランダムな整数を返す
-    int randint(int max) {
+    // 任意の整数型を返すようテンプレート化（戻り値型を明示）
+    UInt randint(UInt max) {
         return next() % max;
     }
 
-    // [low, high] の整数を一様分布でランダムに返す
-    int randint(int low, int high) {
+    UInt randint(UInt low, UInt high) {
         return low + next() % (high - low + 1);
     }
 
-    // [0.0, 1.0) のランダムな小数を返す
     double rand() {
-        return static_cast<double>(next()) / static_cast<double>(UINT32_MAX);
+        constexpr int bits = std::numeric_limits<UInt>::digits;         // 仮数部のbit数ではなく、整数としてのbit数
+        constexpr int float_bits = std::numeric_limits<double>::digits; // 仮数部の精度bit数（float=24, double=53）
+
+        if constexpr(bits >= float_bits) {
+            UInt value = next() >> (bits - float_bits); // 上位 float_bits を使う
+            return static_cast<double>(value) / static_cast<double>(UInt(1) << float_bits);
+        } else {
+            return static_cast<double>(next()) / static_cast<double>(std::numeric_limits<UInt>::max());
+        }
     }
 
-    // 重みに応じてインデックスをサンプリング（離散分布サンプリング）
+    // 離散分布サンプリング（常に int でOK）
     int sample_discrete(const std::vector<double> &weights) {
         double total = std::accumulate(weights.begin(), weights.end(), 0.0);
         double r = rand() * total;
         double cumulative = 0.0;
-
         for(size_t i = 0; i < weights.size(); ++i) {
             cumulative += weights[i];
             if(r < cumulative) {
                 return static_cast<int>(i);
             }
         }
-        return static_cast<int>(weights.size() - 1); // fallback
+        return static_cast<int>(weights.size() - 1);
     }
 
-    // イテレータ範囲から k 個ランダムサンプルを抽出（順序ランダム）
+    // イテレータから k 個サンプル（順序ランダム）
     template <typename Iterator>
     std::vector<typename std::iterator_traits<Iterator>::value_type>
     random_sample(Iterator begin, Iterator end, int k) {
@@ -101,16 +96,107 @@ class Xorshift32 {
         return std::vector<T>(pool.begin(), pool.begin() + k);
     }
 
-    // ベクトルの要素をランダムに並び替える（Fisher-Yates シャッフル）
+    // シャッフル
     template <typename T>
     void shuffle(std::vector<T> &vec) {
-        for(int i = static_cast<int>(vec.size()) - 1; i > 0; --i) {
+        for(int i = (int)(vec.size()) - 1; i > 0; --i) {
             int j = randint(i + 1);
             std::swap(vec[i], vec[j]);
         }
     }
 };
-Xorshift32 xor_shift_rng;
+
+class Xorshift32 : public XorshiftBase<Xorshift32, uint32_t> {
+  private:
+    uint32_t state;
+
+  public:
+    explicit Xorshift32(uint32_t seed = 2525)
+        : state(seed) {
+    }
+
+    uint32_t next() {
+        uint32_t x = state;
+        x ^= x << 13;
+        x ^= x >> 17;
+        x ^= x << 5;
+        state = x;
+        return x;
+    }
+};
+
+class Xorshift64 : public XorshiftBase<Xorshift64, uint64_t> {
+  private:
+    uint64_t state;
+
+  public:
+    explicit Xorshift64(uint64_t seed = 202520252025ULL)
+        : state(seed) {
+    }
+
+    uint64_t next() {
+        uint64_t x = state;
+        x ^= x << 13;
+        x ^= x >> 7;
+        x ^= x << 17;
+        state = x;
+        return x;
+    }
+};
+
+class Xorshift128Plus : public XorshiftBase<Xorshift128Plus, uint64_t> {
+  private:
+    uint64_t s[2];
+
+  public:
+    Xorshift128Plus(uint64_t seed1 = 123456789, uint64_t seed2 = 987654321) {
+        s[0] = seed1 ? seed1 : 1;
+        s[1] = seed2 ? seed2 : 2;
+    }
+
+    uint64_t next() {
+        uint64_t s1 = s[0];
+        uint64_t s0 = s[1];
+        s[0] = s0;
+        s1 ^= s1 << 23;
+        s[1] = s1 ^ s0 ^ (s1 >> 17) ^ (s0 >> 26);
+        return s[1] + s0;
+    }
+};
+
+Xorshift32 x32rng;
+
+class ZobristHash {
+  public:
+    vector<uint64_t> piece_keys;
+    uint64_t hash;
+    int piece_count;
+
+    ZobristHash(int piece_count) {
+        Xorshift64 rng;
+        for(int i = 0; i < piece_count; ++i) {
+            piece_keys.push_back(rng.next());
+        }
+        hash = 0;
+        this->piece_count = piece_count;
+    }
+
+    void initHash(const vector<int> &board) {
+        hash = 0;
+        for(const auto &piece : board) {
+            hash ^= piece_keys[piece];
+        }
+    }
+
+    void updateHash(int piece, int old_piece) {
+        hash ^= piece_keys.at(piece);
+        hash ^= piece_keys.at(old_piece);
+    }
+
+    uint64_t getHash() const {
+        return hash;
+    }
+};
 
 class WalkersAlias {
   private:
@@ -157,8 +243,8 @@ class WalkersAlias {
             p[i] = 1.0;
     }
 
-    int choice() {
-        double r = xor_shift_rng.rand() * n;
+    int choice(Xorshift32 &rng) {
+        double r = rng.rand() * n;
         int i = static_cast<int>(r);
         if(r - i < p[i])
             return i;
@@ -166,78 +252,6 @@ class WalkersAlias {
             return a[i];
     }
 };
-
-// =================================
-// Simulated Annealing
-// =================================
-
-double exponential_schedule(double init, double obj, double elapsed_time, double max_time) {
-    double lambda_param = log(obj / init) / max_time;
-    return init * exp(lambda_param * elapsed_time);
-}
-
-double linear_schedule(double init, double obj, double elapsed_time, double max_time) {
-    return init + (obj - init) * (elapsed_time / max_time);
-}
-
-bool acceptance_probability(double delta_cost, double temp) {
-    return delta_cost < 0 || xor_shift_rng.rand() < exp(-delta_cost / temp) ? true : false;
-}
-
-template <typename T>
-tuple<T, double> SimulatedAnnealing(
-    const T &x0,
-    double t0,
-    double t1,
-    double max_time,
-    int display_interval = 10000) {
-
-    T x = x0;
-    T best_x = x;
-
-    double current_cost = 0; // TODO
-    double best_cost = current_cost;
-
-    TimeKeeper time_keeper(max_time);
-
-    int iteration = 0;
-    for(iteration = 0;; iteration++) {
-        int elapsed = time_keeper.getElapsedTime();
-        if(elapsed >= max_time)
-            break;
-
-        double temp = linear_schedule(t0, t1, elapsed, max_time);
-
-        T new_x = x;         // TODO
-        double new_cost = 0; // TODO
-
-        double delta_cost = new_cost - current_cost;
-        if(delta_cost < 0 || xor_shift_rng.rand() < exp(-delta_cost / temp)) { // TODO Tempをexp内に含めると勾配が急になる（≒受理確率が下がる）
-            current_cost = new_cost;
-            x = new_x;
-        }
-
-        if(current_cost < best_cost) {
-            best_x = x;
-            best_cost = current_cost;
-        }
-
-        iteration++;
-        if(iteration % display_interval == 0) {
-            cerr << "Iteration: " + to_string(iteration) +
-                        ", Current cost: " + to_string(current_cost) +
-                        ", Best cost: " + to_string(best_cost) +
-                        ", Temp: " + to_string(temp)
-                 << endl;
-        }
-    }
-
-    cerr << "Iteration: " + to_string(iteration) +
-                ", Best cost: " + to_string(best_cost)
-         << endl;
-
-    return {best_x, best_cost};
-}
 
 // =================================
 // Beam Search
@@ -346,7 +360,7 @@ State BeamSearch(State &init_state, const int max_depth, const int beam_width) {
             nth_element(temp_nodes.begin(), temp_nodes.begin() + beam_width, temp_nodes.end(),
                         [](TempNode &n1, TempNode &n2) {
                             if(n1.score == n2.score) {
-                                return xor_shift_rng.rand() < 0.5 ? true : false;
+                                return x32rng.rand() < 0.5 ? true : false;
                             } else {
                                 return n1.score > n2.score;
                             }
@@ -382,7 +396,25 @@ State BeamSearch(State &init_state, const int max_depth, const int beam_width) {
 // =================================
 
 void solve() {
-    // ここに問題を解くコードを書く
+    ZobristHash zobrist_hash(100);
+    vector<int> board(100);
+    for(int i = 0; i < 100; ++i) {
+        board[i] = i;
+    }
+    zobrist_hash.initHash(board);
+    cout << "Initial Hash: " << zobrist_hash.getHash() << endl;
+
+    zobrist_hash.updateHash(99, 0);
+    cout << "Updated Hash: " << zobrist_hash.getHash() << endl;
+
+    zobrist_hash.updateHash(50, 15);
+    cout << "Updated Hash: " << zobrist_hash.getHash() << endl;
+
+    zobrist_hash.updateHash(15, 50);
+    cout << "Updated Hash: " << zobrist_hash.getHash() << endl;
+
+    zobrist_hash.updateHash(0, 99);
+    cout << "Updated Hash: " << zobrist_hash.getHash() << endl;
 }
 
 int main() {
