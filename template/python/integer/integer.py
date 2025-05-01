@@ -63,10 +63,13 @@ class Factorize(object):
 
     # 素因数分解 O(logN)
     def factorize(self, n):
-        fct = defaultdict(lambda: 0)
+        fct = {}
         while n != 1:
-            fct[self.primes[n]] += 1
-            n //= self.primes[n]
+            p = self.primes[n]
+            if p not in fct:
+                fct[p] = 0
+            fct[p] += 1
+            n //= p
         return fct
 
     # n以下の最小の素因数を列挙する O(NlogN)
