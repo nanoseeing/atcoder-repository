@@ -4,7 +4,8 @@
       "name": "Linux",
       "includePath": [
         "${workspaceFolder}/**",
-        "/home/nanoseeing/AtCoder/ac-library-master"
+        "/home/nanoseeing/AtCoder/ac-library-master",
+        "/home/nanoseeing/AtCoder/cpp-dump"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",

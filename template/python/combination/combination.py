@@ -69,35 +69,37 @@ def comb_mod(n, k, mod):
 
 # クラス
 class CombMod:
-    def __init__(self, N, MOD=10**9 + 7):
-        N = N + 1
-        inv = [0] * N
-        fact = [0] * N
-        fact_inv = [0] * N
+    def __init__(self, n, mod):
+        n = n + 1
+        inv = [0] * n
+        fact = [0] * n
+        fact_inv = [0] * n
 
         inv[0] = 0
         inv[1] = 1
-        for n in range(2, N):
-            q, r = divmod(MOD, n)
-            inv[n] = inv[r] * (-q) % MOD
+        for n in range(2, n):
+            q, r = divmod(mod, n)
+            inv[n] = inv[r] * (-q) % mod
 
         fact[0] = 1
-        for n in range(1, N):
-            fact[n] = n * fact[n - 1] % MOD
+        for n in range(1, n):
+            fact[n] = n * fact[n - 1] % mod
 
         fact_inv[0] = 1
-        for n in range(1, N):
-            fact_inv[n] = fact_inv[n - 1] * inv[n] % MOD
+        for n in range(1, n):
+            fact_inv[n] = fact_inv[n - 1] * inv[n] % mod
 
         self.fact = fact
         self.fact_inv = fact_inv
-        self.inv = inv
+        self.mod = mod
 
-    def comb(self, n, r, mod=10**9 + 7):
-        return self.fact[n] * self.fact_inv[r] % mod * self.fact_inv[n - r] % mod
+    def comb(self, n, r):
+        if n < r or n < 0 or r < 0:
+            return 0
+        return (self.fact[n] * self.fact_inv[r] * self.fact_inv[n - r]) % self.mod
 
-    def perm(self, n, r, mod=10**9 + 7):
-        return self.fact[n] * self.fact_inv[n - r] % mod
+    def perm(self, n, r):
+        return (self.fact[n] * self.fact_inv[n - r]) % self.mod
 
 
 # 組み合わせ(numpy)

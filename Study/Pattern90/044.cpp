@@ -29,6 +29,33 @@ using vvl = vector<vector<ll>>;
 #define rrep(i, a, b) for(int i = (a); i >= (b); --i)
 
 void solve() {
+    ll N, Q;
+    cin >> N >> Q;
+    vector<ll> A(N);
+    rep(i, 0, N) {
+        cin >> A[i];
+    }
+
+    ll shift = 0;
+    rep(i, 0, Q) {
+        ll t, x, y;
+        cin >> t >> x >> y;
+        x--;
+        y--;
+        cpp_dump(t, x, y);
+        if(t == 1) {
+            ll new_x, new_y;
+            new_x = (x - shift + N) % N;
+            new_y = (y - shift + N) % N;
+            cpp_dump(new_x, new_y);
+            swap(A[new_x], A[new_y]);
+        } else if(t == 2) {
+            shift = (shift + 1) % N;
+        } else if(t == 3) {
+            ll new_x = (x - shift + N) % N;
+            cout << A[new_x] << "\n";
+        }
+    }
 }
 
 int main() {

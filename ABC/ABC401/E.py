@@ -62,7 +62,8 @@ def debug(*args):
 # ================
 
 # import itertools
-# import heapq
+import heapq
+
 # import bisect
 # from collections import Counter
 # from collections import defaultdict
@@ -75,7 +76,47 @@ INF = 9 * 10**18
 
 
 def main():
-    return
+    N, M = in_nn()
+    edges = create_array((N,), list)
+    for _ in range(M):
+        a, b = in_nn()
+        edges[a - 1].append(b - 1)
+        edges[b - 1].append(a - 1)
+
+    # 1から始める
+    # heapに頂点番号をいれる
+    # 小さいやつ取り出す
+    # 取り出した頂点からいける頂点で、頂点集合に含まれないものを追加
+    # 取り出した頂点は削除しておくこと。
+    # 現在の頂点集合の最大値 == 追加回数ならOK
+    #    そのとき、いける頂点のsetの個数
+    ans = []
+    q = [0]
+    heapq.heapify(q)
+    visited = set([0])
+    non_visited = set()
+    max_visited = 0
+
+    for cnt in range(N):
+        if q:
+            v = heapq.heappop(q)
+            # debug(v, q)
+            # debug(v)
+            visited.add(v)
+            for to in edges[v]:
+                # debug(v, to)
+                if to not in visited:
+                    if to not in non_visited:
+                        non_visited.add(to)
+                        heapq.heappush(q, to)
+            non_visited.discard(v)
+            max_visited = max(max_visited, v)
+        if cnt == max_visited and cnt == len(visited) - 1:
+            ans.append(len(non_visited))
+        else:
+            ans.append(-1)
+
+    print(*ans, sep="\n")
 
 
 if __name__ == "__main__":

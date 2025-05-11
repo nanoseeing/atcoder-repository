@@ -10,6 +10,7 @@
         "-g",
         "-O2",
         "-I/home/nanoseeing/AtCoder/ac-library-master",
+        "-I/home/nanoseeing/AtCoder/cpp-dump",
         "-Wsign-compare", //符号付き整数と符号無し整数を比較する場合に警告
         "-Wparentheses", //代入式の値を真偽値として使っている場合（e.g. if(x=0)）に警告
         "-Wuninitialized", //初期化していない変数を式の中で使うと警告

@@ -1,8 +1,18 @@
 # ================
 # Template
 # ================
+
 import pickle
 import sys
+
+# import itertools
+# import heapq
+# import bisect
+from collections import Counter, defaultdict, deque
+
+# from dataclasses import dataclass
+
+# sys.setrecursionlimit(10**7)
 
 input = sys.stdin.buffer.readline
 in_n = lambda: int(input())
@@ -61,21 +71,46 @@ def debug(*args):
 # Main
 # ================
 
-# import itertools
-# import heapq
-# import bisect
-# from collections import Counter
-# from collections import defaultdict
-# from collections import deque
-
-# sys.setrecursionlimit(10**7)
-
 MOD = 10**9 + 7
 INF = 9 * 10**18
 
 
 def main():
-    return
+    H, W = in_nn()
+    grid = []
+    for _ in range(H):
+        s = list(in_s())
+        grid.append(s)
+
+    A, B, C, D = in_nn()
+    A -= 1
+    B -= 1
+    C -= 1
+    D -= 1
+
+    dist = create_array((H, W), INF)
+    dist[A][B] = 0
+    que = deque()
+    que.append((A, B))
+
+    directions = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+    kecks = [(1, 0), (2, 0), (0, 1), (0, 2), (-1, 0), (-2, 0), (0, -1), (0, -2)]
+    while que:
+        h, w = que.popleft()
+        for dh, dw in directions:
+            nh, nw = h + dh, w + dw
+            if 0 <= nh < H and 0 <= nw < W and grid[nh][nw] == "." and dist[nh][nw] > dist[h][w]:
+                dist[nh][nw] = dist[h][w]
+                que.appendleft((nh, nw))
+        for dh, dw in kecks:
+            nh, nw = h + dh, w + dw
+            if 0 <= nh < H and 0 <= nw < W and grid[nh][nw] == "#" and dist[nh][nw] > dist[h][w] + 1:
+                dist[nh][nw] = dist[h][w] + 1
+                que.append((nh, nw))
+
+    for h in range(H):
+        debug(dist[h])
+    print(dist[C][D] if dist[C][D] != INF else -1)
 
 
 if __name__ == "__main__":

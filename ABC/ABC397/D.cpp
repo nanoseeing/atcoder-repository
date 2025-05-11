@@ -29,6 +29,9 @@ using vvl = vector<vector<ll>>;
 #define rrep(i, a, b) for(int i = (a); i >= (b); --i)
 
 void solve() {
+    ll N;
+    cin >> N;
+    
 }
 
 int main() {

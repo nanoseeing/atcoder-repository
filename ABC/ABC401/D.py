@@ -75,7 +75,54 @@ INF = 9 * 10**18
 
 
 def main():
-    return
+    N, K = in_nn()
+    S = list(in_s())
+
+    o_cnt = 0
+    for i in range(N):
+        if S[i] == "o":
+            if i - 1 >= 0:
+                S[i - 1] = "."
+            if i + 1 < N:
+                S[i + 1] = "."
+            o_cnt += 1
+    if o_cnt == K:
+        for i in range(N):
+            if S[i] == "?":
+                S[i] = "."
+        print("".join(S))
+        return
+
+    question_inds = []
+    question_ind = -1
+    for i in range(N):
+        if S[i] == "?":
+            if question_ind == -1:
+                question_ind = i
+        else:
+            if question_ind != -1:
+                question_inds.append((question_ind, i))
+                question_ind = -1
+    else:
+        if question_ind != -1:
+            question_inds.append((question_ind, N))
+
+    remain_o = K - o_cnt
+    buffer = sum((next_ind - question_ind + 1) // 2 for question_ind, next_ind in question_inds)
+
+    if buffer > remain_o:
+        print("".join(S))
+    else:
+        for question_ind, next_ind in question_inds:
+            t = next_ind - question_ind
+            if t % 2 == 1:
+                for j in range(question_ind, next_ind):
+                    if (j - question_ind) % 2 == 0:
+                        S[j] = "o"
+                    else:
+                        S[j] = "."
+
+        print("".join(S))
 
 
 if __name__ == "__main__":

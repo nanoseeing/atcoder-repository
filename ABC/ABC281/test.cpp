@@ -29,6 +29,25 @@ using vvl = vector<vector<ll>>;
 #define rrep(i, a, b) for(int i = (a); i >= (b); --i)
 
 void solve() {
+    vector<int> x = {1, 2, 3, 4, 5, 7};
+    rep(i, -1, 10) {
+        auto it = lower_bound(x.begin(), x.end(), i);
+        cpp_dump(i, it - x.begin(), *it, it == x.end());
+    }
+    cpp_dump(x.rbegin(), *x.rbegin(), x.end(), *x.end());
+
+    multiset<ll> y;
+
+    y = {7, 1, 2, 3, 4, 5, 1};
+    y.erase(y.find(1));
+    cpp_dump(y);
+
+    y = {7, 1, 2, 3, 4, 5, 1};
+    y.erase(1);
+    cpp_dump(y);
+
+    y = {7, 1, 2, 3, 4, 5, 1};
+    cpp_dump(*y.begin(), *y.rbegin(), y.size());
 }
 
 int main() {

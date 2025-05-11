@@ -75,7 +75,21 @@ INF = 9 * 10**18
 
 
 def main():
-    return
+    N = in_n()
+    ans = 0
+
+    ans = 0
+    for i in range(1, 100):
+        two_p = 2**i
+        x = int((N / two_p) ** 0.5)
+        if two_p * x * x > N:
+            x -= 1
+        if two_p * (x + 1) * (x + 1) < N:
+            x += 1
+        if x > 0:
+            ans += (x + 1) // 2
+
+    print(ans)
 
 
 if __name__ == "__main__":
