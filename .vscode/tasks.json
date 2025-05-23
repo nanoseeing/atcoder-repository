@@ -2,24 +2,22 @@
   "tasks": [
     {
       "type": "cppbuild",
-      "label": "C/C++: g++ build active file",
+      "label": "C++ default build",
       "command": "/usr/bin/g++",
       "args": [
         "-std=gnu++20",
-        "-fdiagnostics-color=always",
-        "-g",
-        "-O2",
+        "-g2",
         "-I/home/nanoseeing/AtCoder/ac-library-master",
         "-I/home/nanoseeing/AtCoder/cpp-dump",
-        "-Wsign-compare", //符号付き整数と符号無し整数を比較する場合に警告
-        "-Wparentheses", //代入式の値を真偽値として使っている場合（e.g. if(x=0)）に警告
-        "-Wuninitialized", //初期化していない変数を式の中で使うと警告
-        //fsanitize=address,undefined", //addressは領域外参照などを、undefinedは整数型のオーバーフローや0除算などの未定義動作を、それぞれ実行時に検出し報告
-        // "-fno-omit-frame-pointer", //-fsanitize=addressに付けるといいやつ
-        // "-fno-sanitize-recover", //sanitizeの項目に引っかかったら即座にプログラムを終了させる
-        "${file}", //パスを含めたファイル名
-        "-o", //作成した実行ファイルに以下の名前を付ける
-        "${fileDirname}/a.out" //ファイルと同じディレクトリにa.outという名前で実行ファイルを作成
+        "-I/usr/include/boost/lib",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-variable",
+        "-fdiagnostics-color=always", //警告をカラー表示
+        "-fsanitize=address,undefined", // 配列外参照,未定義動作（オーバーフローなど）
+        "${file}",
+        "-o",
+        "${fileDirname}/a.out"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -29,7 +27,62 @@
         "kind": "build",
         "isDefault": true
       }
+    },
+    {
+      "type": "cppbuild",
+      "label": "C++ debug build",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-std=gnu++20",
+        "-g2",
+        "-I/home/nanoseeing/AtCoder/ac-library-master",
+        "-I/home/nanoseeing/AtCoder/cpp-dump",
+        "-I/usr/include/boost/lib",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-variable",
+        "-fdiagnostics-color=always", //警告をカラー表示
+        "${file}",
+        "-o",
+        "${fileDirname}/a.out"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "type": "cppbuild",
+      "label": "C++ release build",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-std=gnu++20",
+        "-O2",
+        "-I/home/nanoseeing/AtCoder/ac-library-master",
+        "-I/home/nanoseeing/AtCoder/cpp-dump",
+        "-I/usr/include/boost/lib",
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-variable",
+        "-mtune=native",
+        "-march=native",
+        "-fdiagnostics-color=always", //警告をカラー表示
+        "${file}",
+        "-o",
+        "${fileDirname}/a.out"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
     }
-  ],
-  "version": "2.0.0"
+  ]
 }

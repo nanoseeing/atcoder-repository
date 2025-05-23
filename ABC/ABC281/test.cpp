@@ -28,26 +28,48 @@ using vvl = vector<vector<ll>>;
 #define rep(i, a, b)  for(int i = (a); i < (b); ++i)
 #define rrep(i, a, b) for(int i = (a); i >= (b); --i)
 
-void solve() {
-    vector<int> x = {1, 2, 3, 4, 5, 7};
-    rep(i, -1, 10) {
-        auto it = lower_bound(x.begin(), x.end(), i);
-        cpp_dump(i, it - x.begin(), *it, it == x.end());
+template <typename T>
+int my_upper_bound(const std::vector<T> &vec, const T &value) {
+    int low = -1;
+    int high = vec.size();
+
+    while(low + 1 < high) {
+        int mid = (low + high) / 2;
+        if(value < vec[mid]) {
+            high = mid;
+        } else {
+            low = mid;
+        }
     }
-    cpp_dump(x.rbegin(), *x.rbegin(), x.end(), *x.end());
 
-    multiset<ll> y;
+    return high; // この位置が value より大きい最初の要素
+}
 
-    y = {7, 1, 2, 3, 4, 5, 1};
-    y.erase(y.find(1));
-    cpp_dump(y);
+void solve() {
+    // vector<int> x = {1, 2, 3, 4, 5, 7};
+    // rep(i, -1, 10) {
+    //     auto it = lower_bound(x.begin(), x.end(), i);
+    //     cpp_dump(i, it - x.begin());
+    // }
+    // cpp_dump(x.rbegin(), *x.rbegin(), x.end(), *x.end());
 
-    y = {7, 1, 2, 3, 4, 5, 1};
-    y.erase(1);
-    cpp_dump(y);
+    // multiset<ll> y;
 
-    y = {7, 1, 2, 3, 4, 5, 1};
-    cpp_dump(*y.begin(), *y.rbegin(), y.size());
+    // y = {7, 1, 2, 3, 4, 5, 1};
+    // y.erase(y.find(1));
+    // cpp_dump(y);
+
+    // y = {7, 1, 2, 3, 4, 5, 1};
+    // y.erase(1);
+    // cpp_dump(y);
+
+    // y = {7, 1, 2, 3, 4, 5, 1};
+    // cpp_dump(*y.begin(), *y.rbegin(), y.size());
+
+    vector<int> v = {2, 4, 6, 6, 7, 8};
+    rep(i, 0, 10) {
+        cpp_dump(i, my_upper_bound(v, i));
+    }
 }
 
 int main() {

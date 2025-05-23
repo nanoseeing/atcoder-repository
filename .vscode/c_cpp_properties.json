@@ -5,7 +5,8 @@
       "includePath": [
         "${workspaceFolder}/**",
         "/home/nanoseeing/AtCoder/ac-library-master",
-        "/home/nanoseeing/AtCoder/cpp-dump"
+        "/home/nanoseeing/AtCoder/cpp-dump",
+        "/usr/include/boost"
       ],
       "defines": [],
       "compilerPath": "/usr/bin/gcc",

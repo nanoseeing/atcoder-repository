@@ -97,7 +97,10 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "variant": "cpp",
-    "dsu": "cpp"
+    "dsu": "cpp",
+    "modint": "cpp",
+    "strstream": "cpp",
+    "all": "cpp"
   },
   "cmake.ignoreCMakeListsMissing": true
 }

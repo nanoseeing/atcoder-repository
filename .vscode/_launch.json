@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "g++ build and debug active file",
+      "name": "C++ DEBUG",
       "type": "cppdbg",
       "request": "launch",
       "program": "${fileDirname}/a.out",
@@ -10,10 +10,17 @@
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],
-      "externalConsole": true, // ここをtrueに変更する
-      "MIMode": "lldb",
-      // "preLaunchTask": "build before debug"
-      "miDebuggerPath": "/usr/bin/gdb"
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C++ debug build"
     }
   ]
 }
