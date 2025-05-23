@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C++: Custom Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/a.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "externalConsole": false,
+      "setupCommands": [
+        {
+          "description": "gdb の再フォーマットを有効にする",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "逆アセンブリ フレーバーを Intel に設定",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "C++ debug build",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "debug.terminal.clearBeforeReusing": false
+    }
+  ]
+}

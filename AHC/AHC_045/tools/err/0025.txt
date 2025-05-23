@@ -1,8 +1,0 @@
-    Finished `release` profile [optimized] target(s) in 0.02s
-     Running `target/release/tester ../a.out`
-Iteration: 10000, Current cost: 178992, Best cost: 177424, max_g_num: 8, Temp: 104.152199 
-Iteration: 20000, Current cost: 177154, Best cost: 176927, max_g_num: 6, Temp: 78.335626 
-Iteration: 30000, Current cost: 176044, Best cost: 175996, max_g_num: 5, Temp: 51.449935 
-Iteration: 40000, Current cost: 174633, Best cost: 174615, max_g_num: 3, Temp: 24.924017 
-Iteration: 49173, Best cost: 174350 
-Score = 456455
